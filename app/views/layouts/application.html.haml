@@ -7,10 +7,22 @@
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
   %body
-    - if notice.present?
-      = notice
 
-    - if alert.present?
-      = alert
+    .container
+      .navbar-spacer
+      %nav.navbar
+        .container
+          %ul.navbar-list
+            %li.navbar-item= link_to 'Home', root_path, class: 'navbar-link'
+            %li.navbar-item= link_to 'Notes', notes_path, class: 'navbar-link'
+            %li.navbar-item= link_to 'Tags', tags_path, class: 'navbar-link'
 
-    = yield
+      - if notice.present?
+        = notice
+
+      - if alert.present?
+        = alert
+
+
+      .docs-section
+        = yield

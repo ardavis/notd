@@ -1,2 +1,5 @@
 %h1= @note.title
 %p= @note.content
+
+- @note.attachments.each do |attachment|
+  = link_to attachment.document_file_name, attachment.document.url

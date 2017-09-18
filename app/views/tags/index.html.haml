@@ -1,0 +1,15 @@
+= link_to 'New Tag', new_tag_path, class: 'button button-primary'
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th
+
+  %tbody
+    - @tags.each do |tag|
+      %tr
+        %td= link_to tag.name, tag
+        %td
+          = link_to 'Edit', edit_tag_path(tag)
+          = link_to 'Delete', tag, method: :delete, data: { confirm: 'Are you sure you want to delete this tag?' }

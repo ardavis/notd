@@ -1,4 +1,4 @@
-= link_to 'New Note', new_note_path
+= link_to 'New Note', new_note_path, class: 'button button-primary'
 
 %table
   %thead
@@ -9,7 +9,7 @@
   %tbody
     - @notes.each do |note|
       %tr
-        %td= note.title
+        %td= link_to note.title, note
         %td
           = link_to 'Edit', edit_note_path(note)
           = link_to 'Delete', note, method: :delete, data: { confirm: 'Are you sure you want to delete this note?' }

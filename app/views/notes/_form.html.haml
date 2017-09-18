@@ -1,8 +1,14 @@
-= form_for @note do |f|
-  = f.label :title
-  = f.text_field :title
+= simple_form_for @note do |f|
 
-  = f.label :content
-  = f.text_area :content
+  = f.input :title, input_html: { class: 'u-full-width' }
+  = f.input :content, input_html: { class: 'u-full-width' }
+
+  = label_tag :tags
+  = text_field_tag :tags, @note.tags.collect(&:name).join(', '), class: 'tag-input'
+
+  .row
+    = f.fields_for :attachments do |builder|
+      .four.columns
+        = builder.file_field :document
 
   = f.submit

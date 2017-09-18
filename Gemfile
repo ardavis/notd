@@ -22,6 +22,12 @@ gem 'turbolinks', '~> 5'
 gem 'jbuilder', '~> 2.5'
 
 gem 'haml-rails'
+gem 'skeleton-rails', :git => 'https://github.com/helios-technologies/skeleton-rails'
+gem 'paperclip'
+gem 'simple_form'
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
+gem 'active_model_serializers', '~> 0.10.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
